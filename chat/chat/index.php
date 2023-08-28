@@ -27,23 +27,16 @@
 </head>
 
 <body>
-  <h1 class="justify-content-left d-inline">Secured Chat App</h1>
+<?php //require '../.././header.php'; ?>
   <?php
-  echo $_SESSION['uid'];
-  echo $_SESSION['username'];
-  // die;
+ 
   if(isset($_SESSION['uid']) && isset($_SESSION['username'])): ?>
+<div class="wrapper">
+  <?php //include '../.././topbar.php' ?>
+  <?php //include '../.././sidebar.php' ?>
 
- <?php echo "hello"; ?>
 
-    <div style="float:right;">
-      <form href="" method="POST" style="width: 0%; float: right;">
-        <button type="submit" style='text-align:left; margin-left:40px; margin-top:3px;' class="btn btn-outline-danger btn-sm" id="logoutBtn" onmouseover="hover('logout');" onmouseout="out('logout');" name="logout">
-            <p class="card-text" id="logoutP"> <strong>Logout</strong><i class="fas fa-sign-out-alt animate__animated animate__fadeInLeft" id="logoutIcon" style="display: none; margin-left:7px;"></i></p>
-        </button>
-      </form>
-    </div>
-  <br/>
+   
 
   <h1 style="text-align: center; font-size:48px;" class="animate__animated animate__fadeIn"><?php echo "Welcome, <strong>".$_SESSION['username']; ?></strong>&nbsp<i style="font-size:16px;" class='fas fa-circle align-middle text-success'></i></h1>
   <?php require_once('get_users.php'); ?>

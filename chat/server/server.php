@@ -8,7 +8,7 @@
         $uid = $_SESSION['login_id'];
         $query = "UPDATE users SET online=0, logout_timestamp=CURRENT_TIMESTAMP() WHERE id=$uid";
         if($db->query($query) === true){
-            session_unset();
+           // session_unset();
             // session_destroy();
           }
     }
@@ -60,7 +60,7 @@
                             $query = "INSERT INTO login_details (uid, token) VALUES ($uid, '$token')";
                             if($db->query($query) === true)
                             {
-                                header( "refresh:1;url=./chat/" );
+                                header( "location:./chat/" );
                             }
                         }
                         else
@@ -68,7 +68,7 @@
                             $query = "UPDATE login_details SET token='$token', last_timestamp = CURRENT_TIMESTAMP() WHERE uid=$uid";
                             if($db->query($query) === true)
                             {
-                                header( "refresh:1;url=./chat/" );
+                                header( "location:./chat/" );
                             }
                         }
                     }
